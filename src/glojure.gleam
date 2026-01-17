@@ -21,7 +21,7 @@ pub fn flat_map_(f: fn(a) -> List(b)) {
 }
 
 pub fn flat_map(g, f: fn(a) -> List(b)) {
-  fn(r) { g(fn(acc, step) { list.fold(f(step), acc, r) } )}
+  fn(r) { g(fn(acc, step) { list.fold(f(step), acc, r) }) }
 }
 
 pub fn filter_(f: fn(x) -> Bool) {

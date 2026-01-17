@@ -20,7 +20,7 @@ pub fn main() -> Nil {
     {
       use max <- list.map(powers10)
       let upper_bound = float.round(max)
-      bench.Input(int.to_string(upper_bound) <> " Ints", list.range(1, upper_bound))
+      bench.Input(int.to_string(upper_bound), list.range(1, upper_bound))
     },
     [
       bench.Function("list based", glojure_test.listed_bla),

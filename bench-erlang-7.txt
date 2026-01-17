@@ -1,0 +1,29 @@
+benching set 10 list based
+benching set 10 trs based
+benching set 100 list based
+benching set 100 trs based
+benching set 1000 list based
+benching set 1000 trs based
+benching set 10000 list based
+benching set 10000 trs based
+benching set 100000 list based
+benching set 100000 trs based
+benching set 1000000 list based
+benching set 1000000 trs based
+benching set 10000000 list based
+benching set 10000000 trs based
+Input               Function                       IPS          Mean            SD           P99
+10                  list based             596618.5682        0.0016        0.0871        0.0026
+10                  trs based              687311.2042        0.0014        0.1048        0.0023
+100                 list based              54855.6482        0.0182        0.0595        0.2827
+100                 trs based               65263.3797        0.0153        0.0364        0.0386
+1000                list based               4486.8347        0.2228        0.1844        0.6153
+1000                trs based                4879.3977        0.2049        0.1436        0.5161
+10000               list based                337.7732        2.9605        0.7907        5.6598
+10000               trs based                 402.8266        2.4824        0.4636        4.3716
+100000              list based                 24.5986       40.6525        2.6784       50.4678
+100000              trs based                  35.9157       27.8429        2.5621       36.9550
+1000000             list based                  1.4177      705.3312      290.1363     1268.0945
+1000000             trs based                   3.0574      327.0702       33.8651      398.1780
+10000000            list based                  0.0000        0.0000        0.0000        0.0000
+10000000            trs based                   0.2991     3342.6151        0.0000     3342.6151

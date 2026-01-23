@@ -1,24 +1,8 @@
 # glojure
 
-[![Package Version](https://img.shields.io/hexpm/v/glojure)](https://hex.pm/packages/glojure)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/glojure/)
+Experimeting with Clojure-like transducers in Gleam, the stdlib `list` module, and some recursion shapes.
 
-Clojure-like transducers for Gleam
-
-```sh
-gleam add glojure@1
-```
-
-The iteration functions on `list` module rely on intermediate list creation.
-Powerfull and optimised as they might be,
-sometimes the list being iterated is too big or there are too many steps.
-In those cases, the intermediate lists create aditional overhead.
-One can build such a pipeline on raw recursion (and willpower),
-but that generaly looks very different from the familiar
-list pipeline approach.
-This is an experiment of applying Clojure's idea of transducers,
-delegating all the work to the reducing function,
-with minimal intermediate steps.
+**please dont read this as a library to be used**
 
 As a silly benchmark example we:
 
@@ -28,13 +12,14 @@ As a silly benchmark example we:
 * filter for only odd elements
 * add them all
 
-For the erlang target, we got up to 2x improvement for large inputs
-(at 10^7 the list pipeline doesn't run anymore, but the transducer one does).
-For js (node 25), at 10^5 input elements we got nearly a 10x improvement (kept getting out of heap for larger inputs).
+Then tried doing the above in different ways:
 
-Theres lots to explore here, but I got stuck on handling "stateful" transducers (`drop_*`, `take_*`, windowing/chunking/indexing)
-
-Further documentation can be found at <https://hexdocs.pm/glojure>.
+* list based: simply using `list` functions on a pipeline
+* trs based: implementing a basic form of Clojure-inspired transducers
+* better list: going through the list once, with a `list.fold`, and have the body process the rest. the hability to use `use` with `list.fold` here does feel really nice
+* recur: my first idea of how to do it without iteration helpers. really easy to write and follow, might be the closest to idiomatic Gleam i got (and wouldnt you know it, from this experiment is also the fastest)
+* recur flat: basically the above, but trying to "flatten" in the sense of not having nested `case`s. i think this is still a fair try, but is not as nice
+* recur flatter: here i basically tried to abuse pattern-matching and open up more branches and have most of the logic there. hard to write and hard to read
 
 ## Development
 

@@ -1,29 +1,85 @@
 benching set 10 list based
 benching set 10 trs based
+benching set 10 better list
+benching set 10 recur
+benching set 10 recur flat
+benching set 10 recur flatter
 benching set 100 list based
 benching set 100 trs based
+benching set 100 better list
+benching set 100 recur
+benching set 100 recur flat
+benching set 100 recur flatter
 benching set 1000 list based
 benching set 1000 trs based
+benching set 1000 better list
+benching set 1000 recur
+benching set 1000 recur flat
+benching set 1000 recur flatter
 benching set 10000 list based
 benching set 10000 trs based
+benching set 10000 better list
+benching set 10000 recur
+benching set 10000 recur flat
+benching set 10000 recur flatter
 benching set 100000 list based
 benching set 100000 trs based
+benching set 100000 better list
+benching set 100000 recur
+benching set 100000 recur flat
+benching set 100000 recur flatter
 benching set 1000000 list based
 benching set 1000000 trs based
+benching set 1000000 better list
+benching set 1000000 recur
+benching set 1000000 recur flat
+benching set 1000000 recur flatter
 benching set 10000000 list based
 benching set 10000000 trs based
+benching set 10000000 better list
+benching set 10000000 recur
+benching set 10000000 recur flat
+benching set 10000000 recur flatter
 Input               Function                       IPS          Mean            SD           P99
-10                  list based             596618.5682        0.0016        0.0871        0.0026
-10                  trs based              687311.2042        0.0014        0.1048        0.0023
-100                 list based              54855.6482        0.0182        0.0595        0.2827
-100                 trs based               65263.3797        0.0153        0.0364        0.0386
-1000                list based               4486.8347        0.2228        0.1844        0.6153
-1000                trs based                4879.3977        0.2049        0.1436        0.5161
-10000               list based                337.7732        2.9605        0.7907        5.6598
-10000               trs based                 402.8266        2.4824        0.4636        4.3716
-100000              list based                 24.5986       40.6525        2.6784       50.4678
-100000              trs based                  35.9157       27.8429        2.5621       36.9550
-1000000             list based                  1.4177      705.3312      290.1363     1268.0945
-1000000             trs based                   3.0574      327.0702       33.8651      398.1780
-10000000            list based                  0.0000        0.0000        0.0000        0.0000
-10000000            trs based                   0.2991     3342.6151        0.0000     3342.6151
+10                  list based             635190.1274        0.0015        0.0626        0.0023
+10                  trs based              848479.4625        0.0011        0.1434        0.0015
+10                  better list            690911.3928        0.0014        0.2662        0.0019
+10                  recur                 1069781.9884        0.0009        0.0286        0.0013
+10                  recur flat             877718.5099        0.0011        0.2920        0.0014
+10                  recur flatter          969379.6034        0.0010        0.0416        0.0013
+100                 list based              54711.2061        0.0182        0.0821        0.2836
+100                 trs based               72181.8730        0.0138        0.0632        0.0414
+100                 better list             62565.7648        0.0159        0.0513        0.1991
+100                 recur                   96930.9883        0.0103        0.0517        0.0334
+100                 recur flat              76492.3307        0.0130        0.0628        0.0633
+100                 recur flatter           93918.6085        0.0106        0.0512        0.0493
+1000                list based               4326.6953        0.2311        0.1916        0.6133
+1000                trs based                5572.0601        0.1794        0.1564        0.5672
+1000                better list              4770.4307        0.2096        0.2205        1.2304
+1000                recur                    7426.6738        0.1346        0.1747        0.4818
+1000                recur flat               5788.9305        0.1727        0.2132        0.5854
+1000                recur flatter            6687.3947        0.1495        0.1775        0.5382
+10000               list based                308.8421        3.2379        0.7780        6.2373
+10000               trs based                 389.7652        2.5656        0.5479        4.2556
+10000               better list               345.4769        2.8945        0.5672        5.0232
+10000               recur                     586.4766        1.7050        0.5232        3.5318
+10000               recur flat                336.3971        2.9726        0.9146        6.3584
+10000               recur flatter             490.6981        2.0379        0.8855        5.2822
+100000              list based                 22.4904       44.4633        9.3366       79.1271
+100000              trs based                  35.7296       27.9879        4.0888       45.9401
+100000              better list                30.6389       32.6382        4.6285       53.4313
+100000              recur                      50.7341       19.7105        3.6944       33.5779
+100000              recur flat                 38.8010       25.7725        3.9210       40.9300
+100000              recur flatter              49.5881       20.1661        3.7538       36.2049
+1000000             list based                  1.2427      804.6425     1096.5924     4434.3596
+1000000             trs based                   2.9543      338.4877       60.1122      622.3881
+1000000             better list                 2.7632      361.8923       56.4361      523.3869
+1000000             recur                       3.9295      254.4828       61.7513      485.7066
+1000000             recur flat                  3.1533      317.1221       53.2984      481.7219
+1000000             recur flatter               3.5751      279.7080       79.3177      602.8745
+10000000            list based                  0.1498     6671.2637        0.0000     6671.2637
+10000000            trs based                   0.2844     3515.5785       44.7281     3560.3066
+10000000            better list                 0.2480     4031.5991      182.8954     4214.4945
+10000000            recur                       0.4645     2152.5363       43.6044     2205.7534
+10000000            recur flat                  0.3325     3007.1018       48.9552     3076.0904
+10000000            recur flatter               0.4098     2439.8929      209.3922     2647.8157

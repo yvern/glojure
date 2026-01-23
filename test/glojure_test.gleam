@@ -1,6 +1,5 @@
 import gleam/int
 import gleam/list
-import gleam/string
 import gleeunit
 import glojure
 
@@ -70,49 +69,42 @@ pub fn filter_more_test() {
   assert actual == expected
 }
 
-pub fn indexed_test_no() {
-  let indexing = glojure.indexed
+pub fn pre_bench_test() {
+  let actual = glojure.transduced_bla(input)
 
-  let actual = {
-    use acc, #(i, _) <- glojure.fold(input, 0, indexing)
-    acc + i
-  }
-
-  let expected = {
-    use acc, _, i <- list.index_fold(input, 0)
-    acc + i
-  }
+  let expected = glojure.listed_bla(input)
 
   assert actual == expected
 }
 
-pub fn transduced_bla(nums) {
-  glojure.fold(
-    nums,
-    0,
-    {
-      glojure.map_(int.to_string)
-      |> glojure.flat_map(string.to_utf_codepoints)
-      |> glojure.map(string.utf_codepoint_to_int)
-      |> glojure.filter(int.is_odd)
-    },
-    int.add,
-  )
+pub fn better_list_test() {
+  let actual = glojure.better_list_bla(input)
+
+  let expected = glojure.listed_bla(input)
+
+  assert actual == expected
 }
 
-pub fn listed_bla(nums) {
-  nums
-  |> list.map(int.to_string)
-  |> list.flat_map(string.to_utf_codepoints)
-  |> list.map(string.utf_codepoint_to_int)
-  |> list.filter(int.is_odd)
-  |> list.fold(0, int.add)
+pub fn rec_list_test() {
+  let actual = glojure.rec_bla(input)
+
+  let expected = glojure.listed_bla(input)
+
+  assert actual == expected
 }
 
-pub fn pre_bench_test() {
-  let actual = transduced_bla(input)
+pub fn rec_flat_list_test() {
+  let actual = glojure.rec_bla_flat(input)
 
-  let expected = listed_bla(input)
+  let expected = glojure.listed_bla(input)
+
+  assert actual == expected
+}
+
+pub fn rec_flatter_list_test() {
+  let actual = glojure.rec_bla_flatter(input)
+
+  let expected = glojure.listed_bla(input)
 
   assert actual == expected
 }
